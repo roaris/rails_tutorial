@@ -5,9 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     services:
       db:
-        image: sqlite3
+        image: mysql:5.7
+        env:
+          MYSQL_USERNAME: dbuser
+          MYSQL_ROOT_PASSWORD: dbpass
     container:
-      image: ruby:2.6.8
+      image: ruby:2.6
+      env:
+        RAILS_ENV: test
+        MYSQL_HOST: db
+        MYSQL_USERNAME: dbuser
+        MYSQL_ROOT_PASSWORD: dbpass
     steps:
     - uses: actions/checkout@v2
     - uses: actions/cache@v1
