@@ -61,6 +61,7 @@ end
 # 本番環境ではPostgresqlを使う
 group :production do
   gem 'pg'
+  gem 'fog-aws'
 end
 
 gem 'bootstrap-sass', '3.3.7'
@@ -69,3 +70,5 @@ gem 'bcrypt'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'carrierwave'
+gem 'mini_magick'
